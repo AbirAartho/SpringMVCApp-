@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,31 +13,31 @@
 <body>
 
 <div class="container">
-<form>
+<form:form action="/save-student" method="post" modelAttribute="command">
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputEmail4">Email</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+      <label for="inputId">ID</label>
+      <form:input type="number" class="form-control" id="inputEmail4" path="id" placeholder="ID" />
     </div>
     <div class="form-group col-md-6">
-      <label for="inputPassword4">Password</label>
-      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+      <label for="inputName">Name</label>
+      <form:input type="text" class="form-control" id="inputPassword4" path="name" placeholder="Name" />
     </div>
+  </div>
+  <div class="form-group">
+    <label for="inputRoll">RollNo</label>
+    <form:input type="number" class="form-control" id="inputAddress" path="rollNo" placeholder="RollNo" />
   </div>
   <div class="form-group">
     <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-  </div>
-  <div class="form-group">
-    <label for="inputAddress2">Address 2</label>
-    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+    <form:input type="text" class="form-control" id="inputAddress2" path="address" placeholder="Address" />
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputCity">City</label>
-      <input type="text" class="form-control" id="inputCity">
+      <label for="inputEmail">Email</label>
+      <form:input type="email" class="form-control" id="inputCity" path="emailId" placeholder="Email" />
     </div>
-    <div class="form-group col-md-4">
+   <%--  <div class="form-group col-md-4">
       <label for="inputState">State</label>
       <select id="inputState" class="form-control">
         <option selected>Choose...</option>
@@ -43,19 +46,19 @@
     </div>
     <div class="form-group col-md-2">
       <label for="inputZip">Zip</label>
-      <input type="text" class="form-control" id="inputZip">
-    </div>
+      <form:input type="text" class="form-control" id="inputZip" />
+    </div> --%>
   </div>
-  <div class="form-group">
+<%--   <div class="form-group">
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <form:input class="form-check-input" type="checkbox" id="gridCheck" />
       <label class="form-check-label" for="gridCheck">
         Check me out
       </label>
     </div>
-  </div>
+  </div> --%>
   <button type="submit" class="btn btn-primary">Sign in</button>
-</form>
+</form:form>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -1,0 +1,20 @@
+package com.springMVC.jsp.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.springMVC.jsp.model.Student;
+import com.springMVC.jsp.repository.StudentRepo;
+
+public class Service {
+	
+	@org.springframework.stereotype.Service
+	public StudentRepo repo;
+	
+	@Autowired
+	public List<Student> getData() {
+		return repo.findAll();
+	}
+
+}
