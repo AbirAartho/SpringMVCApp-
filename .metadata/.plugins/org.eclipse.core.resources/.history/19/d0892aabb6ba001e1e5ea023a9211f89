@@ -1,5 +1,0 @@
-package com.springMVC.jsp.repository;
-
-public interface StudentRepo {
-
-}
